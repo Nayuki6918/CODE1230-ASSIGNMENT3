@@ -6,7 +6,6 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
 <script src="js/jquery.min.js"></script>
-<script src="./js/building.jeson"></script>
  <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -29,8 +28,7 @@
 <!--start-smoth-scrolling-->
 <!-- Map -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
-	<script src='./js/data.js'></script>
-	<script src='./js/building.jeson'></script>		
+	<script src='./js/data.js'></script>		
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
@@ -114,38 +112,39 @@ mapboxgl.accessToken = 'pk.eyJ1IjoibmF5dWtpNjkxOCIsImEiOiJjamxqZnh0YzIwYmt0M2tte
 var map = new mapboxgl.Map({
     container: 'map', // container id
     style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
-    center: [151.004105, -33.813002], // starting position [lng, lat]
+    center: [152.004105, -32.813002], // starting position [lng, lat]
     pitch: 40,
-    bearing: 17.6,
-    zoom: 6 // starting zoom
+    bearing: 22,
+    zoom: 8 // starting zoom
 });
-map.on('load',function(){
-    
-    map.addLayer({
-    "id": "building",
-    "type": "fill-extrusion",
-    "source": {
-        'type': 'geojson',
-        'data': './js/building.jeson'
-    },
-    'layout': {
-        'visibility': 'visible'
-        },
-    'paint': {
-            'fill-extrusion-color' : {
-                'property': 'colour',
-                'type': 'identity'
-            },
-            'fill-extrusion-height' : {
-                'type': 'identity',
-                'property': 'height'
-            },
-            'fill-extrusion-base' : {
-                'type': 'identity',
-                'property': 'base_height'
-            },
-             'fill-extrusion-opacity': 1
-        }
+      
+map.on('load', function() {
+
+map.addLayer({
+	"id": "data",
+	"type": "fill-extrusion",
+	"source": {
+		'type': 'geojson',
+		'data': './js/building.geojson'
+	},
+	'layout': {
+		'visibility': 'visible'
+		},
+	'paint': {
+			'fill-extrusion-color' : {
+				'property': 'colour',
+				'type': 'identity'
+			},
+			'fill-extrusion-height' : {
+				'type': 'identity',
+				'property': 'height'
+			},
+			'fill-extrusion-base' : {
+				'type': 'identity',
+				'property': 'base_height'
+			},
+			 'fill-extrusion-opacity': 1
+		}
 
 });
 });
