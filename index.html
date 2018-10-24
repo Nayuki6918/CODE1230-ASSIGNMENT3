@@ -6,7 +6,7 @@
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
 <script src="js/jquery.min.js"></script>
-<script src="./js/building.js"></script>
+<script src="./js/building.jeson"></script>
  <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link rel="stylesheet" type="text/css" href="css/component.css" />
@@ -30,7 +30,7 @@
 <!-- Map -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
 	<script src='./js/data.js'></script>
-	<script src='./js/11.jeson'></script>		
+	<script src='./js/building.jeson'></script>		
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <body>
@@ -126,7 +126,7 @@ map.on('load',function(){
     "type": "fill-extrusion",
     "source": {
         'type': 'geojson',
-        'data': './js/building.js'
+        'data': './js/building.jeson'
     },
     'layout': {
         'visibility': 'visible'
