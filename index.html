@@ -1,0 +1,196 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>CODE1230 ASSIGNMENT 3 
+</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!--jQuery (necessary for Bootstrap's JavaScript plugins)-->
+<script src="js/jquery.min.js"></script>
+<script src="./js/building.js"></script>
+ <!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/component.css" />
+<!--Custom Theme files-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</script>
+
+<!--start-smoth-scrolling-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+		</script>
+<!--start-smoth-scrolling-->
+<!-- Map -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+	<script src='./js/data.js'></script>
+	<script src='./js/11.jeson'></script>		
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.css' rel='stylesheet' />
+</head>
+<body>
+<!--header-->
+	<div class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html"></a>
+				</div>
+			<!--top-nav-->
+			 <nav class="top-nav">
+							<ul class="top-nav">
+								<li class="active"><a href="#home" class="scroll">Home </a></li>
+								<li><a href="#Main" class="scroll">Main</a></li>
+								<li><a href="#Comparison" class="scroll">Comparison</a></li>
+								<li><a href="#Conclusion" class="scroll">Conclusion</a></li>
+								<li><a href="#References" class="scroll">References</a></li>
+				
+							</ul>
+				
+						</nav>
+						<div class="clearfix"> </div>
+		<!-- script-for-menu -->
+		<!----start-top-nav-script---->
+		<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+		</script>
+
+	<!--End-top-nav-script-->
+				<div class="clearfix"> </div>
+		</div>
+	</div>
+		<!--banner-->
+			<div class="banner" >
+				<div class="container" style='width:1100px; height: 250px;' >
+					<div class="col-xs-20">
+						<div class="banner-info">
+						 	<h1>CODE1230 ASSIGNMENT3</h1>
+						 	<h2>XIAOMIN,GUO(NAYUKI) Z5158014</h2>
+						
+
+
+						</div>
+					</div>
+			 	</div>
+			</div>
+			<div class="Features" id="feature">
+			<div class="col-sm-10 col-md-12 phone-text"  div style="left: 50px;">
+				<h3>The Defination of <span> Data journalism </span></h3>
+				<p>Data journalism could reflecting the increased role that numerical data is used in the production and distribution of information in the digital era. It reflects the increased interaction between the journalist and several other fields such as design, computer science and statistics.
+				<br>A Sample of Data Journalism
+				<a href="http://fingfx.thomsonreuters.com/gfx/rngs/MYANMAR-ROHINGYA/010051VB46G/index.html"  onclick="subgo()">
+			<img src="images/right_arrow.png" alt="" style='max-width:130px;float:left'></a></p>
+			                                        </div> 
+				                             
+			                                        </div>	
+			  
+		<!--Features-->
+		<div class="Features" id="feature">
+			<div class="container"></div>
+				<div class="Main" id="Main">
+					<div class="container">
+<div id='map' style='width: 100%; height: 400px'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoibmF5dWtpNjkxOCIsImEiOiJjamxqZnh0YzIwYmt0M2tteGlpdmdsajc4In0.Q8FQ1pA57KWY-AGE0eYYwg';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/light-v9', // stylesheet location
+    center: [151.004105, -33.813002], // starting position [lng, lat]
+    pitch: 40,
+    bearing: 17.6,
+    zoom: 6 // starting zoom
+});
+map.on('load',function(){
+    
+    map.addLayer({
+    "id": "building",
+    "type": "fill-extrusion",
+    "source": {
+        'type': 'geojson',
+        'data': './js/building.js'
+    },
+    'layout': {
+        'visibility': 'visible'
+        },
+    'paint': {
+            'fill-extrusion-color' : {
+                'property': 'colour',
+                'type': 'identity'
+            },
+            'fill-extrusion-height' : {
+                'type': 'identity',
+                'property': 'height'
+            },
+            'fill-extrusion-base' : {
+                'type': 'identity',
+                'property': 'base_height'
+            },
+             'fill-extrusion-opacity': 1
+        }
+
+});
+});
+</script>
+
+			</div>
+					
+		
+						
+			<div class="col-sm-10 col-md-12 phone-text"  div style="left: 50px;"></div>
+			<div class="col-sm-10 col-md-7 phone-text"  div style="left: 50px;">
+			<h3>From 2011 to 2016<span> increasing of educatees</span></h3>
+			<p>According to NSW Education Centre, Since 2011, the NSW Government has embarked on a series of ambitious reforms aimed to improve education outcomes in NSW. The reforms focus on improving learning level for rural and remote students, taking new approaches to improve the education and social aspirations of Aboriginal children and teenagers(NSW Education Centre.2016). From the map of the differences of educatees, it can represent the result and improvement of these policies. In the west and northwest area, the increasing data is less than other sites, it may because of the low population density in these cities. On the east coast, the increasing of educatees was above than average, especially in Newcastle, Sydney and Wollongong.</p>
+			</div>
+			<div><br /><br /><br /><br /><img class = "scroll1" img src="./images/sss.png" style="max-width:450px;"style="margin-right:100px;">		
+			</div>
+			
+				
+				
+						
+		
+
+	
+					
+		<!--Conclusion-->
+		<div class="Conclusion" id="Conclusion"></div>
+		<div class="col-sm-10 col-md-12 phone-text" div style="left: 50px;">
+				<h3>Conclusion</h3>
+				<p> ● The increasing number of educatees and population size higher than average in Sydney，Newcastle and Wollongong.
+				<br>● The quality of education in the eastern coast higher than the west and northwest area. 
+				<br>● Women in major cities are more likely to hold qualifications of college degrees than women in regional or remote locations. </p>
+				
+			</div>
+			
+
+		<!--references-->
+		<div class="References" id="References"></div>
+		<div class="col-sm-10 col-md-12 phone-text" div style="left: 50px;">
+				<h3>References</h3>
+				<p>NSW Education Centre.(2016) State of Education in NSW - 2016: Centre for Education Statistics and Evaluation Centre for Education Statistics and Evaluation.
+					NSW Education Centre.(2016) ANNUAL REPORT 2016 NSW DEPARTMENT OF EDUCATION
+					Dharmica Mistry.(2016) EDUCATION AND LEARNING Women in NSW Report Series 2016</p>
+				
+			</div>
+		
+	
+</body>
+</html>
